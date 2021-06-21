@@ -1,0 +1,120 @@
+.page-header {
+
+  padding-top: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--header-border-color);
+
+  @media screen and (min-width: 768px) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  @media screen and (min-width: 1200px) {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  & .logo {
+    color: var(--black-text-color);
+
+    @media screen and (min-width: 768px) {
+      margin-right: 88px;
+    }
+
+    @media screen and (min-width: 1200px) {
+      margin-right: 93px;
+    }
+  }
+
+  & .container {
+    position: relative;
+
+    @media screen and (min-width: 768px) {
+      display: flex;
+      align-items: center;
+    }
+  }
+  &__menu-btn {
+    position: absolute;
+    top: -6px;
+    right: 15px;
+
+    padding: 0;
+    display: block;
+    border: none;
+    width: 40px;
+    height: 40px;
+    line-height: 1;
+
+    background-color: transparent;
+    fill: var(--black-text-color);
+
+    cursor: pointer;
+    transition: fill var(--default-transition-delay) var(--default-transition-timing);
+
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
+
+    &:hover,
+    &:focus {
+      fill: var(--accent-text-color);
+    }
+  }
+}
+.header-addr {
+  display: none;
+
+  @media screen and (min-width: 768px) {
+    display: block;
+    margin-left: auto;
+  }
+
+  @media screen and (min-width: 1200px) {
+    display: flex;
+  }
+
+  &__item {
+    display: flex;
+    align-content: center;
+    &:not(:last-child) {
+      @media screen and (min-width: 768px) and (max-width: 1199px) {
+        margin-bottom: 10px;
+      }
+      @media screen and (min-width: 1200px) {
+        margin-right: 50px;
+      }
+    }
+  }
+
+  &__icon {
+    margin-right: 10px;
+    fill: var(--secondary-text-color);
+
+    transition: fill var(--default-transition-delay) var(--default-transition-timing);
+
+    .header-addr__item:focus-within &,
+    .header-addr__item:hover & {
+      fill: var(--accent-text-color);
+    }
+  }
+
+  &__link {
+    display: block;
+    font-size: 12px;
+    line-height: 1.16;
+
+    @media screen and (min-width: 1200px) {
+      font-size: 14px;
+      line-height: 1.14;
+    }
+
+    color: var(--secondary-text-color);
+
+    transition: color var(--default-transition-delay) var(--default-transition-timing);
+
+    .header-addr__item:hover &,
+    &:focus {
+      color: var(--accent-text-color);
+    }
+  }
+}
